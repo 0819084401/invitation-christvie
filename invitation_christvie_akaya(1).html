@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbf8f1">
+<meta name="description" content="Invitation interactive à l'anniversaire de Christvie Akaya — 31 janvier 2027 à 16h00, Home 1.">
+<title>Christvie Akaya — Invitation</title>
+<style>
+:root{--gold:#b89550;--gold2:#e5cf91;--ink:#29251f;--cream:#fbf8f1;--muted:#776f61}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#b89550 0.65px,transparent .65px);background-size:22px 22px;z-index:-1}
+main{max-width:560px;margin:auto;min-height:100svh;padding:18px 18px 40px;display:flex;flex-direction:column;align-items:center}
+.frame{width:100%;border:1px solid #d8c391;outline:1px solid #eee3c8;outline-offset:-7px;min-height:calc(100svh - 36px);padding:38px 23px 30px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(250,245,232,.88));box-shadow:0 20px 60px #6c56201a}
+.ornament{font-size:24px;color:var(--gold);letter-spacing:9px;margin-bottom:22px;animation:glow 3s infinite}
+.kicker{font:600 10px/1.8 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+h1{font-size:clamp(42px,12vw,68px);line-height:.95;font-weight:400;letter-spacing:-2px;margin:0;color:#3d3426}
+h1 span{display:block;font-style:italic;font-size:.57em;letter-spacing:1px;color:var(--gold);margin:12px 0}
+.subtitle{font-size:16px;line-height:1.7;color:var(--muted);max-width:310px;margin:22px auto}
+.rule{height:1px;width:95px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+.btn{border:1px solid var(--gold);background:linear-gradient(120deg,#a7833d,#e6d29b,#b89550);color:#fffdf7;font:700 11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;padding:16px 22px;border-radius:2px;cursor:pointer;transition:transform .25s,box-shadow .25s;text-decoration:none;display:inline-block;box-shadow:0 8px 20px #9c7b362b}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px #9c7b3640}.btn.secondary{background:transparent;color:#8d6d30;box-shadow:none}
+.hidden{display:none!important}.fade-in{animation:rise .9s both}
+.details{width:100%;display:grid;gap:11px;margin:20px 0 8px;text-align:left}
+.detail{display:flex;align-items:center;gap:14px;padding:14px 13px;background:#fffdf8;border:1px solid #eadfbe}
+.symbol{width:35px;height:35px;display:grid;place-items:center;border:1px solid #d8c391;border-radius:50%;color:#a17e3c;font-size:17px;flex-shrink:0}
+.detail small{display:block;font:700 9px Arial,sans-serif;letter-spacing:2px;color:#a17e3c;text-transform:uppercase;margin-bottom:5px}
+.detail strong{font-size:16px;font-weight:400}.section{width:100%;padding-top:28px}
+.note{font-size:15px;line-height:1.8;color:var(--muted)}.countdown{display:flex;gap:8px;justify-content:center;margin:17px 0}.time{min-width:62px;padding:11px 5px;background:#fffdf8;border:1px solid #e6d7b1}.time b{display:block;font-size:24px;font-weight:400;color:#9e7936}.time span{font:8px Arial,sans-serif;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.footer{font:9px Arial,sans-serif;letter-spacing:2px;color:#a48b58;margin-top:28px}
+.confetti{position:fixed;top:-20px;width:5px;height:9px;background:var(--gold2);opacity:.8;z-index:5;pointer-events:none;animation:fall 4s linear forwards}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes glow{0%,100%{opacity:.6;text-shadow:0 0 0 #e5cf91}50%{opacity:1;text-shadow:0 0 15px #e5cf91}}@keyframes fall{to{transform:translateY(110vh) rotate(620deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+  <section class="frame" id="cover">
+    <div class="ornament">✧ ❦ ✧</div>
+    <p class="kicker">Une invitation spéciale</p>
+    <h1>Christvie<span>Akaya</span></h1>
+    <div class="rule"></div>
+    <p class="subtitle">Un jour précieux. Une nouvelle année de vie. Des souvenirs à créer ensemble.</p>
+    <p class="kicker">Vous êtes cordialement invité(e)</p>
+    <button class="btn" id="openBtn">Ouvrir mon invitation&nbsp; ✨</button>
+    <div class="footer">UNE CÉLÉBRATION • UN MOMENT • DES SOUVENIRS</div>
+  </section>
+
+  <section class="section hidden" id="invitation">
+    <div class="ornament">✧ ❦ ✧</div>
+    <p class="kicker">Avec gratitude envers Dieu</p>
+    <h1 style="font-size:clamp(35px,10vw,52px)">Célébrons<br><span style="font-size:.72em">la vie</span></h1>
+    <p class="note">Christvie Akaya serait heureux de partager avec vous cette journée spéciale, dans la joie, l’amour et la louange.</p>
+    <div class="rule"></div>
+    <p class="kicker">Retenez la date</p>
+    <div class="countdown" aria-label="Compte à rebours">
+      <div class="time"><b id="days">—</b><span>Jours</span></div>
+      <div class="time"><b id="hours">—</b><span>Heures</span></div>
+      <div class="time"><b id="mins">—</b><span>Minutes</span></div>
+      <div class="time"><b id="secs">—</b><span>Secondes</span></div>
+    </div>
+    <div class="details">
+      <div class="detail"><div class="symbol">✧</div><div><small>Date</small><strong>Dimanche 31 janvier 2027</strong></div></div>
+      <div class="detail"><div class="symbol">◷</div><div><small>Heure</small><strong>16 h 00</strong></div></div>
+      <div class="detail"><div class="symbol">⌖</div><div><small>Lieu</small><strong>Home 1</strong></div></div>
+      <div class="detail"><div class="symbol">♔</div><div><small>Dress code</small><strong>Chic et élégant</strong></div></div>
+      <div class="detail"><div class="symbol">♫</div><div><small>Ambiance</small><strong>Gospel &amp; louange</strong></div></div>
+    </div>
+    <p class="note">« Voici le jour que l’Éternel a fait : qu’il soit pour nous un sujet d’allégresse et de joie ! »<br><span style="font-size:12px;color:#a17e3c">Psaume 118:24</span></p>
+    <button class="btn" id="rsvpBtn">Confirmer ma présence sur WhatsApp</button>
+    <button class="btn secondary" id="shareBtn" style="margin-top:12px">Partager l’invitation</button>
+    <p class="note" style="font-size:12px;margin-top:20px">Ta présence sera un vrai cadeau. Au plaisir de célébrer ensemble !</p>
+    <div class="footer">AVEC JOIE • CHRISTVIE AKAYA</div>
+  </section>
+</main>
+<script>
+const openBtn=document.getElementById('openBtn');
+openBtn.addEventListener('click',()=>{
+  document.getElementById('invitation').classList.remove('hidden');
+  document.getElementById('invitation').classList.add('fade-in');
+  document.getElementById('cover').style.minHeight='auto';
+  document.getElementById('cover').style.padding='34px 20px';
+  openBtn.textContent='Invitation ouverte ✓';
+  openBtn.disabled=true;openBtn.style.opacity='.6';
+  for(let i=0;i<38;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.animationDelay=(Math.random()*1.4)+'s';c.style.background=['#b89550','#e5cf91','#fff','#d8c391'][i%4];document.body.appendChild(c);setTimeout(()=>c.remove(),6000)}
+  setTimeout(()=>document.getElementById('invitation').scrollIntoView({behavior:'smooth',block:'start'}),250);
+});
+const target=new Date('2027-01-31T16:00:00+01:00').getTime();
+function tick(){let diff=Math.max(0,target-Date.now());document.getElementById('days').textContent=Math.floor(diff/86400000);document.getElementById('hours').textContent=Math.floor(diff%86400000/3600000);document.getElementById('mins').textContent=Math.floor(diff%3600000/60000);document.getElementById('secs').textContent=Math.floor(diff%60000/1000)}
+tick();setInterval(tick,1000);
+document.getElementById('rsvpBtn').addEventListener('click',()=>{const msg=encodeURIComponent("Bonjour Christvie ! Je confirme ma présence à ton anniversaire du 31 janvier 2027 à 16h00, à Home 1. Merci pour l'invitation !");window.open('https://wa.me/243819084401?text='+msg,'_blank','noopener')});
+document.getElementById('shareBtn').addEventListener('click',async()=>{const data={title:'Invitation — Christvie Akaya',text:'Tu es invité(e) à l’anniversaire de Christvie Akaya, le 31 janvier 2027 à 16h00, à Home 1.'};if(navigator.share){try{await navigator.share(data)}catch(e){}}else{try{await navigator.clipboard.writeText(location.href);alert('Lien copié ! Tu peux le partager.')}catch(e){alert('Copie le lien depuis la barre d’adresse de ton navigateur.')}}});
+</script>
+</body>
+</html>
